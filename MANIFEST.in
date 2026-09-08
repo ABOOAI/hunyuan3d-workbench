@@ -1,4 +1,4 @@
-include README.md RESEARCH.md VALIDATION.md CHANGELOG.md
+include README.md RESEARCH.md VALIDATION.md CHANGELOG.md RELEASE_NOTES.md
 include .gitignore .gitattributes
 recursive-include .github *.yml
 include pyproject.toml hunyuan.cmd mcp-config.example.json

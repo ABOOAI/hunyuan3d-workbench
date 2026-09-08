@@ -8,6 +8,8 @@
 
 [官方工作台](https://3d.hunyuan.tencent.com/) · [功能调研](RESEARCH.md) · [验收范围](VALIDATION.md) · [更新记录](CHANGELOG.md) · [版本下载](https://github.com/ABOOAI/hunyuan3d-workbench/releases)
 
+维护发布版本时，同时更新 `pyproject.toml` 与 `hunyuan_workbench.py` 的版本号，再更新 [RELEASE_NOTES.md](RELEASE_NOTES.md)。将版本说明提交到 `main` 会触发测试、构建和 GitHub Release 发布；也可在 Actions 手动运行“构建并发布版本”。流程拒绝覆盖已经存在的版本。
+
 ## 适合解决什么问题
 
 - **减少重复操作：** 一次本地执行完成选页面、传文件、填参数和提交，避免逐步让模型点浏览器。
