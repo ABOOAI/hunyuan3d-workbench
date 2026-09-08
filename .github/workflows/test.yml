@@ -1,0 +1,42 @@
+name: 离线测试与打包
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: 安装包和构建工具
+        run: python -m pip install . build
+      - name: 安装离线页面测试所需 Chrome
+        run: python -m playwright install chrome
+      - name: 运行离线测试（不连接混元账号）
+        run: python -m unittest test_workbench test_lifecycle -v
+      - name: 构建 wheel 和源码包
+        run: python -m build
+      - name: 在独立环境验证 wheel
+        shell: pwsh
+        run: |
+          python -m venv "$env:RUNNER_TEMP\hunyuan-wheel-check"
+          $py = "$env:RUNNER_TEMP\hunyuan-wheel-check\Scripts\python.exe"
+          $wheel = (Get-ChildItem -LiteralPath dist -Filter '*.whl' | Select-Object -First 1).FullName
+          & $py -m pip install $wheel
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & $py -I -m hunyuan_workbench --help
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & $py smoke_mcp.py --installed
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }

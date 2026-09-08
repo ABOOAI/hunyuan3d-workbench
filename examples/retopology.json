@@ -1,0 +1,9 @@
+{
+  "feature": "retopology",
+  "mode": "retopology",
+  "name": "道具_低模",
+  "revision": "v001",
+  "model": "./inputs/prop/high-poly.glb",
+  "level": "low",
+  "polygon": "triangle"
+}

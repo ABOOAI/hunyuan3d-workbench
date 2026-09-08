@@ -1,0 +1,38 @@
+# Environments and Python build products
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local credentials, browser sessions, generated jobs and downloads
+.env
+.env.*
+!.env.example
+state/
+**/chrome-profile/
+**/jobs/
+**/queue/
+**/watches/
+**/downloads/
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+browser-status.json
+browser.lock
+browser-current.png
+*-error.png
+
+# Local validation output and editor/OS metadata
+*.log
+mcp-smoke.json
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

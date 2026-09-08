@@ -1,0 +1,8 @@
+{
+  "feature": "rig",
+  "mode": "auto",
+  "name": "角色_自动绑骨",
+  "revision": "v001",
+  "height_m": 1.75,
+  "model": "./inputs/character/character.glb"
+}

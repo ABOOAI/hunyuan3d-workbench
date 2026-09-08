@@ -1,0 +1,28 @@
+[
+  {
+    "feature": "geometry",
+    "mode": "multiview",
+    "name": "陶罐_几何",
+    "revision": "v001",
+    "height_m": 0.34,
+    "face_count": 50000,
+    "views": {
+      "front": "./inputs/prop/front.png",
+      "right": "./inputs/prop/right.png",
+      "back": "./inputs/prop/back.png"
+    }
+  },
+  {
+    "feature": "geometry",
+    "mode": "multiview",
+    "name": "篮筐_几何",
+    "revision": "v001",
+    "height_m": 0.38,
+    "face_count": 50000,
+    "views": {
+      "front": "./inputs/basket/front.png",
+      "right": "./inputs/basket/right.png",
+      "back": "./inputs/basket/back.png"
+    }
+  }
+]

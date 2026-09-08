@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "hunyuan-workbench": {
+      "command": "hunyuan-workbench-mcp",
+      "args": []
+    }
+  }
+}

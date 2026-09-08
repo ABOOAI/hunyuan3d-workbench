@@ -1,0 +1,11 @@
+include README.md RESEARCH.md VALIDATION.md CHANGELOG.md
+include .gitignore .gitattributes
+recursive-include .github *.yml
+include pyproject.toml hunyuan.cmd mcp-config.example.json
+include test_workbench.py test_lifecycle.py smoke_mcp.py
+recursive-include examples *.json
+global-exclude *.pyc *.pyo *.log
+prune state
+prune .venv
+prune build
+prune dist

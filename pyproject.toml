@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hunyuan3d-workbench"
+version = "0.2.1"
+description = "Unofficial local CLI and MCP automation for the Hunyuan 3D web workbench"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["mcp>=1.20,<2", "Pillow>=11,<13", "playwright>=1.55,<2"]
+keywords = ["hunyuan3d", "3d", "cli", "mcp", "blender", "playwright"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Multimedia :: Graphics :: 3D Modeling",
+]
+
+[project.optional-dependencies]
+build = ["build>=1.2,<2"]
+
+[project.urls]
+Repository = "https://github.com/ABOOAI/hunyuan3d-workbench"
+Documentation = "https://github.com/ABOOAI/hunyuan3d-workbench#readme"
+Issues = "https://github.com/ABOOAI/hunyuan3d-workbench/issues"
+
+[project.scripts]
+hunyuan-workbench = "hunyuan_workbench:main"
+hunyuan-workbench-mcp = "hunyuan_workbench:serve"
+
+[tool.setuptools]
+py-modules = ["hunyuan_workbench", "browser_worker", "studio_adapter", "lifecycle", "features", "feature_adapter", "command_api"]
+include-package-data = false

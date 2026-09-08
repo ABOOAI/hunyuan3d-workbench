@@ -1,0 +1,13 @@
+{
+  "feature": "texture",
+  "mode": "multiview",
+  "name": "陶罐_纹理",
+  "revision": "v001",
+  "height_m": 0.34,
+  "model": "./inputs/prop/geometry.glb",
+  "views": {
+    "front": "./inputs/prop/front.png",
+    "right": "./inputs/prop/right.png",
+    "back": "./inputs/prop/back.png"
+  }
+}
